@@ -1,0 +1,53 @@
+<div class="modal-body">
+    <form [formGroup]="globalForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">İsim</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="name" type="search" placeholder="Adı Soyadı">
+                <div *ngIf="name!.invalid && name!.dirty" class="alert alert-danger">Lütfen isim girin</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-email-input" class="col-2 col-form-label">E-posta</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="email" type="email" placeholder="isim@mail.com" id="emailInput">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-url-input" class="col-2 col-form-label">Linkedin URL</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="linkedin" type="url"
+                    placeholder="https://www.linkedin.com/in/profilename/" id="linkedinInput">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-tel-input" class="col-2 col-form-label">Telefon No</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="no" type="tel" placeholder="(555)-987-6543" id="noInput">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-datetime-local-input" class="col-2 col-form-label">Alarm Tarihi</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="alarm" type="datetime-local" id="alarmInput">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Not</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="alarmNote" type="search" placeholder="Kişi ilk defa aranacak" id="noteInput">
+            </div>
+        </div>
+        <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-2 col-form-label">Profil Fotoğrafı</label>
+            <div class="col-10">
+                <input class="form-control" formControlName="profile_image" type="text" id="pfInput">
+            </div>
+        </div>
+        <div class="modal-footer row">
+            <input type="submit" class="btn btn-primary" [disabled]="!globalForm.valid" id="candidateSaveButton">
+            <div *ngIf="fepan" class="alert alert-success" role="alert">Aday Başarıyla Eklendi</div>
+            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
+        </div>
+    </form>
+</div>

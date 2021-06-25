@@ -1,0 +1,133 @@
+<ul class="timeline">
+    <li>
+        <div class="timeline-badge danger"><i class="tim-icons icon-puzzle-10"></i></div>
+        <div class="timeline-panel">
+            <div class="timeline-heading mb-0">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class=" badge badge-pill badge-danger">Teknik Görüşme</span>
+                    </div>
+                    <select (change)="onChange($event.target.value)" class="form-select" style="background-color: #1d8cf8; color: white;">
+                        <option value="Java">Java</option>
+                        <option value=".NET">.NET</option>
+                        <option value="Angular">Angular</option>
+                      </select>
+                </div>
+            </div>
+            <div class="timeline-body">
+                <ng-container *ngIf="i1">
+                    <div class=" col-lg-12 col-md-12 mb-0 mt-0">
+                        <div class="card mt-0 mb-1">
+                            <div class="card-body mb-0 mt-0">
+                                <!-- <div class=" table-full-width table-responsive"> -->
+                                    <table class="table mb-0 mt-0">
+                                        <tbody *ngFor="let order of ordersFormArray.controls; let i = index">
+                                            <tr>
+                                                <td>
+                                                    <form [formGroup]="form" (ngSubmit)="nextButton()">
+                                                        <div class="form-check">
+                                                            <label formArrayName="orders" class=" form-check-label">
+                                                                <input class=" form-check-input" type="checkbox" value="" [formControlName]="i"/>
+                                                                <span class=" form-check-sign">
+                                                                    <span class=" check"> </span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <p class="title">{{questions[i].title}}</p>
+                                                    <p class=" text-muted">
+                                                        {{questions[i].description}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="i2">
+                    <div class=" col-lg-12 col-md-12 mb-0 mt-0">
+                        <div class="card mt-0 mb-1">
+                            <div class="card-body mb-0 mt-0">
+                                <!-- <div class=" table-full-width table-responsive"> -->
+                                    <table class="table mb-0 mt-0">
+                                        <tbody *ngFor="let order of ordersFormArray.controls; let i = index">
+                                            <tr>
+                                                <td>
+                                                    <form [formGroup]="form" (ngSubmit)="nextButton()">
+                                                        <div class="form-check">
+                                                            <label formArrayName="orders" class=" form-check-label">
+                                                                <input class=" form-check-input" type="checkbox" value="" [formControlName]="i"/>
+                                                                <span class=" form-check-sign">
+                                                                    <span class=" check"> </span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <p class="title">{{questions[i].title}}</p>
+                                                    <p class=" text-muted">
+                                                        {{questions[i].description}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="row">
+                <div class="form-group mt-0 col-md-5">
+                    <textarea class="form-control" placeholder="Görüşme Notu, Durum Değerlendirilmesi Belirtin"
+                        id="textarea" #textarea></textarea>
+                </div>
+                <!-- <div class="col-md-2">
+                    <h5 class="mt-3 mb-1"><b> Not: </b></h5>
+                    <p> {{this.ikgorusmesi.stepNote}}</p>
+                </div> -->
+                <ng-container *ngIf="i2; else nextBtn">
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-end">
+                            <div>
+                                <button (click)="backButton()" class="btn btn-danger btn-sm"><i
+                                        class="tim-icons icon-minimal-left mb-1"></i> Geri</button>
+                            </div>
+                            <div class="row ml-2">
+                                <button (click)="nextStep(textarea.value)" class="btn btn-success btn-sm">Teknik Olarak Uygun <i
+                                        class="tim-icons icon-double-right mb-1"></i></button>
+                                <button (click)="backStep(textarea.value)" class="btn btn-info btn-sm">İK Görüşmesi Baştan <i
+                                        class="tim-icons icon-double-right mb-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #nextBtn>
+                    <div class="col-md-3">
+                        <div class="d-flex justify-content-end">
+                            <button (click)="nextButton()" class="universalButton btn btn-danger btn-sm">İleri <i
+                                    class="tim-icons icon-minimal-right mb-1"></i></button>
+                        </div>
+                    </div>
+                </ng-template>
+                <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center">
+                        <button class="navButton btn btn-danger btn-sm" (click)="tecrube_yetersiz()">Tecrübe Yetersiz</button>
+                        <button class="navButton btn btn-danger btn-sm" (click)="teknik_yetersiz()">Teknik Yetersiz</button>
+                        <button class="navButton btn btn-danger btn-sm" (click)="sosyal_beceri_yetersiz()">Sosyal Beceri Yetersiz</button>
+                        <button class="navButton btn btn-danger btn-sm" (click)="kara_liste()">Kara Liste</button>
+                        <button class="navButton btn btn-danger btn-sm" (click)="bastan_degerlendir()">Baştan Değerlendir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

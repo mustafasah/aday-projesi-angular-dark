@@ -1,0 +1,102 @@
+
+/*
+ =========================================================
+ * Black comingCandidates Angular - v1.2.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/black-comingCandidates-angular
+ * Copyright 2020 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/argon-comingCandidates/blob/master/LICENSE.md)
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+ // Core
+
+@import "black-comingCandidates/custom/functions";
+@import "black-comingCandidates/bootstrap/functions";
+
+@import "black-comingCandidates/custom/variables";
+@import "black-comingCandidates/bootstrap/variables";
+
+@import "black-comingCandidates/custom/mixins";
+@import "black-comingCandidates/bootstrap/mixins";
+
+ // Bootstrap components
+
+@import "black-comingCandidates/bootstrap/root";
+@import "black-comingCandidates/bootstrap/reboot";
+@import "black-comingCandidates/bootstrap/type";
+@import "black-comingCandidates/bootstrap/images";
+@import "black-comingCandidates/bootstrap/code";
+@import "black-comingCandidates/bootstrap/grid";
+@import "black-comingCandidates/bootstrap/tables";
+@import "black-comingCandidates/bootstrap/forms";
+@import "black-comingCandidates/bootstrap/buttons";
+@import "black-comingCandidates/bootstrap/transitions";
+@import "black-comingCandidates/bootstrap/dropdown";
+@import "black-comingCandidates/bootstrap/button-group";
+@import "black-comingCandidates/bootstrap/input-group";
+@import "black-comingCandidates/bootstrap/custom-forms";
+@import "black-comingCandidates/bootstrap/nav";
+@import "black-comingCandidates/bootstrap/navbar";
+@import "black-comingCandidates/bootstrap/card";
+@import "black-comingCandidates/bootstrap/breadcrumb";
+@import "black-comingCandidates/bootstrap/pagination";
+@import "black-comingCandidates/bootstrap/badge";
+@import "black-comingCandidates/bootstrap/jumbotron";
+@import "black-comingCandidates/bootstrap/alert";
+@import "black-comingCandidates/bootstrap/progress";
+@import "black-comingCandidates/bootstrap/media";
+@import "black-comingCandidates/bootstrap/list-group";
+@import "black-comingCandidates/bootstrap/close";
+@import "black-comingCandidates/bootstrap/modal";
+@import "black-comingCandidates/bootstrap/tooltip";
+@import "black-comingCandidates/bootstrap/popover";
+@import "black-comingCandidates/bootstrap/carousel";
+@import "black-comingCandidates/bootstrap/utilities";
+@import "black-comingCandidates/bootstrap/print";
+
+ // Custom components
+
+ @import "black-comingCandidates/custom/alerts.scss";
+ @import "black-comingCandidates/custom/buttons.scss";
+ @import "black-comingCandidates/custom/dropdown.scss";
+ @import "black-comingCandidates/custom/footer.scss";
+ @import "black-comingCandidates/custom/forms.scss";
+ @import "black-comingCandidates/custom/images.scss";
+ @import "black-comingCandidates/custom/modal.scss";
+ @import "black-comingCandidates/custom/navbar.scss";
+ @import "black-comingCandidates/custom/type.scss";
+ @import "black-comingCandidates/custom/tables";
+ @import "black-comingCandidates/custom/checkboxes-radio";
+ @import "black-comingCandidates/custom/fixed-plugin";
+ @import "black-comingCandidates/custom/sidebar-and-main-panel.scss";
+ @import "black-comingCandidates/custom/misc.scss";
+ @import "black-comingCandidates/custom/input-group.scss";
+
+
+ // Vendor / Plugins
+
+@import "black-comingCandidates/custom/vendor/plugin-perfect-scrollbar.scss";
+@import "black-comingCandidates/custom/vendor/plugin-animate-bootstrap-notify.scss";
+
+// light mode
+
+@import "black-comingCandidates/custom/white-content.scss";
+
+// Cards
+
+@import 'black-comingCandidates/custom/card';
+@import "black-comingCandidates/custom/cards/card-chart";
+@import "black-comingCandidates/custom/cards/card-map";
+@import "black-comingCandidates/custom/cards/card-user";
+@import "black-comingCandidates/custom/cards/card-task";
+@import "black-comingCandidates/custom/cards/card-plain";
+
+// Angular Differences
+
+@import "black-comingCandidates/angular-differences/angular-differences"

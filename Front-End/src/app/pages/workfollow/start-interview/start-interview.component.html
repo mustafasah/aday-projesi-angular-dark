@@ -1,0 +1,224 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-12">
+            <div class="d-flex justify-content-end mt-4 mr-5">
+                <button *ngIf="!interviewCancel else cancelInterviewTemp" class="btn btn-info mt-2" type="button"
+                    (click)="deleteInterview()">
+                    <i class="tim-icons icon-button-pause mb-1 mr-1"></i> Görüşme İptal
+                </button>
+                <ng-template #cancelInterviewTemp>
+                    <button class="btn btn-info mt-2" type="button" (click)="reStart()">
+                        <i class="tim-icons icon-triangle-right-17 mb-1"></i> Görüşme Başlat
+                    </button>
+                </ng-template>
+            </div>
+            <div class="card card-timeline card-plain">
+                <div style="margin-left:10%">
+                    <h4 class="card-text mb-1" style="color: #1d8cf8;"> <b>{{candidate.name}}</b></h4>
+                    <div *ngIf="!interviewCancel" class="spinner-grow spinner-grow-sm text-info"
+                        style="margin-left: 4.7%;" role="status"></div>
+                </div>
+                <div class="card-body">
+                    <IkGorusmesi *ngIf="this.candidate.stepNotes.ik" [candidate]="candidate"></IkGorusmesi>
+                    <TeknikGorusme *ngIf="this.candidate.stepNotes.tknk" [candidate]="candidate"></TeknikGorusme>
+                    <TeklifGorusmesi *ngIf="this.candidate.stepNotes.tklfgrs" [candidate]="candidate"></TeklifGorusmesi>
+                    <TeklifVerilenler *ngIf="this.candidate.stepNotes.tklfvrln" [candidate]="candidate"></TeklifVerilenler>
+                    <MusteriIkGorusmesi *ngIf="this.candidate.stepNotes.mstrikgrs" [candidate]="candidate"></MusteriIkGorusmesi>
+                    <MusteriTeknikGorusme *ngIf="this.candidate.stepNotes.mstrtknkgrs" [candidate]="candidate"></MusteriTeknikGorusme>
+                    <AdayIstifasi *ngIf="this.candidate.stepNotes.adyistf" [candidate]="candidate"></AdayIstifasi>
+                    <DenemeSureci *ngIf="this.candidate.stepNotes.dnmsrc" [candidate]="candidate"></DenemeSureci>
+                    
+                    <ul class=" timeline" #timelineul id="timelineulid">
+                        <li>
+                            <div class=" timeline-badge reddit"><i class=" tim-icons icon-satisfied"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-reddit"> Deneme
+                                        Süreci </span></div>
+                                <div class=" timeline-body">
+                                    <p> Thank God for the support of my wife and real friends. I also wanted to point
+                                        out that it's the first album to go number 1 off of streaming!!! I love you
+                                        Ellen and also my number one design rule of anything I do from shoes to music to
+                                        homes is that Kim has to like it.... </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class=" timeline-inverted">
+                            <div class=" timeline-badge light"><i class=" tim-icons icon-user-run"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-light"> Aday
+                                        İstifası </span></div>
+                                <div class=" timeline-body">
+                                    <p> Called I Miss the Old Kanye That's all it was Kanye And I love you like Kanye
+                                        loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM </p>
+                                    <p> What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but
+                                        the Polar bear couch is my favorite piece of furniture we own It wasn't any
+                                        Kanyes Set on his goals Kanye </p>
+                                    <hr>
+                                </div>
+                                <div class=" timeline-footer">
+                                    <div class="dropdown" dropdown=""><button
+                                            class=" btn btn-round btn-info dropdown-toggle dropdown-toggle"
+                                            data-toggle="dropdown" dropdowntoggle="" type="button"
+                                            aria-haspopup="true"><i
+                                                class=" tim-icons icon-settings-gear-63"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class=" timeline-badge warning"><i class=" tim-icons icon-puzzle-10"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-warning"> Müşteri
+                                        Teknik Görüşme </span></div>
+                                <div class=" timeline-body">
+                                    <p> Tune into Big Boy's 92.3 I'm about to play the first single from Cruel Winter
+                                        also to Kim's hair and makeup Lorraine jewelry and the whole style squad at
+                                        Balmain and the Yeezy team. Thank you Anna for the invite thank you to the whole
+                                        Vogue team </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class=" timeline-inverted">
+                            <div class=" timeline-badge linkedin"><i class=" tim-icons icon-chat-33"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-linkedin"> Müşteri
+                                        İK Görüşme </span></div>
+                                <div class=" timeline-body">
+                                    <p> Wifey made the best Father's Day meal ever. So thankful so happy so blessed.
+                                        Thank you for making my family We just had fun with the "future" theme !!! It
+                                        was a fun night all together ... The always rude Kanye Show at 2am Sold Out
+                                        Famous viewing @ Figueroa and 12th in downtown. </p>
+                                </div>
+                                <h6><i class=" ti-time"></i> 11 hours ago via Twitter</h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class=" timeline-badge offered"><i class=" tim-icons icon-money-coins"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-offered"> Teklif
+                                        Verilenler </span></div>
+                                <div class=" timeline-body">
+                                    <p> Wifey made the best Father's Day meal ever. So thankful so happy so blessed.
+                                        Thank you for making my family We just had fun with the "future" theme !!! It
+                                        was a fun night all together ... The always rude Kanye Show at 2am Sold Out
+                                        Famous viewing @ Figueroa and 12th in downtown. </p>
+                                </div>
+                                <h6><i class=" ti-time"></i> 11 hours ago via Twitter</h6>
+                            </div>
+                        </li>
+                        <li class=" timeline-inverted">
+                            <div class=" timeline-badge primary"><i class=" tim-icons icon-shape-star"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-primary"> Head Hunt
+                                    </span></div>
+                                <div class=" timeline-body">
+                                    <p> Thank God for the support of my wife and real friends. I also wanted to point
+                                        out that it's the first album to go number 1 off of streaming!!! I love you
+                                        Ellen and also my number one design rule of anything I do from shoes to music to
+                                        homes is that Kim has to like it.... </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class=" timeline-badge default"><i class=" tim-icons icon-spaceship"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-default"> Dış
+                                        Çalışan </span></div>
+                                <div class=" timeline-body">
+                                    <p> dawdCalled I Miss the Old Kanye That's all it was Kanye And I love you like
+                                        Kanye
+                                        loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM </p>
+                                    <p> What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but
+                                        the Polar bear couch is my favorite piece of furniture we own It wasn't any
+                                        Kanyes Set on his goals Kanye </p>
+                                    <hr>
+                                </div>
+                                <div class=" timeline-footer">
+                                    <div class="dropdown" dropdown=""><button
+                                            class=" btn btn-round btn-info dropdown-toggle dropdown-toggle"
+                                            data-toggle="dropdown" dropdowntoggle="" type="button"
+                                            aria-haspopup="true"><i
+                                                class=" tim-icons icon-settings-gear-63"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class=" timeline-inverted">
+                            <div class=" timeline-badge neutral"><i class=" tim-icons icon-bank text-default"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-neutral"> İç Çalışan
+                                    </span></div>
+                                <div class=" timeline-body">
+                                    <p> Tune into Big Boy's 92.3 I'm about to play the first single from Cruel Winter
+                                        also to Kim's hair and makeup Lorraine jewelry and the whole style squad at
+                                        Balmain and the Yeezy team. Thank you Anna for the invite thank you to the whole
+                                        Vogue team </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class=" timeline-badge success"><i class=" tim-icons icon-coins"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-success"> Teklif
+                                        Görüşmesi </span></div>
+                                <div class=" timeline-body">
+                                    <p> Wifey made the best Father's Day meal ever. So thankful so happy so blessed.
+                                        Thank you for making my family We just had fun with the "future" theme !!! It
+                                        was a fun night all together ... The always rude Kanye Show at 2am Sold Out
+                                        Famous viewing @ Figueroa and 12th in downtown. </p>
+                                </div>
+                                <h6><i class=" ti-time"></i> 11 hours ago via Twitter</h6>
+                            </div>
+                        </li>
+                        <li class=" timeline-inverted">
+                            <div class=" timeline-badge danger"><i class=" tim-icons icon-puzzle-10"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading"><span class=" badge badge-pill badge-danger"> Teknik
+                                        Görüşme </span></div>
+                                <div class=" timeline-body">
+                                    <p> Thank God for the support of my wife and real friends. I also wanted to point
+                                        out that it's the first album to go number 1 off of streaming!!! I love you
+                                        Ellen and also my number one design rule of anything I do from shoes to music to
+                                        homes is that Kim has to like it.... </p>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button class="universalButton btn btn-danger btn-sm" id="teknikOlarakUygun">Teknik
+                                        Olarak Uygun</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class=" timeline-badge info"><i class=" tim-icons icon-chat-33"></i></div>
+                            <div class=" timeline-panel">
+                                <div class=" timeline-heading">
+                                    <span class=" badge badge-pill badge-info"> İK Görüşmesi </span>
+                                </div>
+                                <div class=" timeline-body">
+                                    <div class="row d-flex justify-content-around">
+                                        <button class="btn btn-info btn-sm">Görüşme Bekleniyor</button>
+                                        <button class="btn btn-info btn-sm">Yeniden Görüşülecek</button>
+                                    </div>
+                                    <div class=" row">
+                                        <div class=" col-md-8">
+                                            <div class=" form-group">
+                                                <label> Görüşme Notu, Durum Değerlendirilmesi </label>
+                                                <textarea class="form-control" cols="80" rows="4" name="stepNote">
+                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea ng-model="myTextarea"></textarea>
+
+                                    <p>The value of the textarea
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button id="prensipteUygun" class="universalButton btn btn-danger btn-sm">Prensipte
+                                        Uygun <i class="tim-icons icon-double-right mb-1"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

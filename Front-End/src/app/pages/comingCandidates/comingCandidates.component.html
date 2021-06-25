@@ -1,0 +1,57 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+      <div class=" card card-chart">
+        <div class=" card-header">
+          <div class="row" id="modals">
+            <div class="col-md-4">
+              <button class="btn btn-fill btn-danger" data-target="#myModal2" (click)="myModal2.show()">
+                + Aday Ekle
+              </button>
+            </div>
+          </div>
+          <div aria-hidden="true" aria-labelledby="myModalLabel" bsModal class="modal fade modal-black"
+            #myModal2="bs-modal" id="myModal2" role="dialog" tabindex="-1" >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <button aria-hidden="true" class="close" data-dismiss="modal" (click)="myModal2.hide()" type="button">
+                    <i class="tim-icons icon-simple-remove text-white"> </i>
+                  </button>
+                  <div class="text-muted text-center ml-auto mr-auto">
+                    <h3 class="mb-0">Aday Ekle</h3>
+                  </div>
+                </div>
+                  <app-candidate-modal-form></app-candidate-modal-form>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-6 g-4 mt-3" id="cardGroups">
+            <div *ngFor="let candidate of candidates" class="col">
+              <div class="card">
+                <a routerLink="/candidates/{{candidate.key}}"> <img src="assets/public/upload/{{candidate.profile_image}}"
+                    class="card-img-top" alt=""></a>
+                <div class="card-body">
+                  <a routerLink="/candidates/{{candidate.key}}" class="text-decoration-none">
+                    <h5 class="card-title">
+                      <p>{{candidate.name}}</p>
+                    </h5>
+                  </a>
+                  <p class="card-text" style="font-size: 90%">{{candidate.alarm}}</p>
+                  <p style="color: rgb(213, 22, 22);"  class="card-text" > 
+                    <i class=" tim-icons icon-time-alarm text-danger-states"> </i>
+                    {{candidate.alarmNote}}
+                  </p>
+                  <p class="card-text">{{candidate.no}}</p>
+                </div>
+                <!-- <div class="card-footer">
+                  <small class="text-muted">{{candidate.updatedAt}}</small>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

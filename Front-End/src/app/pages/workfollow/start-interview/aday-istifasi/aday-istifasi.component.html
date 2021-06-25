@@ -1,0 +1,55 @@
+<ul class="timeline">
+    <li>
+        <div class="timeline-badge light"><i class="tim-icons icon-user-run"></i></div>
+        <div class="timeline-panel">
+            <div class="timeline-heading mb-0">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class=" badge badge-pill badge-light">Aday İstifası</span>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <button class="btn btn-fill btn-danger btn-sm" type="button"><i
+                                class="tim-icons icon-tap-02 mb-1"></i> Devral</button>
+                        <button class="btn btn-fill btn-danger btn-sm" type="button"><i
+                                class="tim-icons icon-simple-remove mb-1" id="unclaim"></i> Bırak</button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="timeline-body">
+            </div>
+            <div class="row">
+                <div class="form-group mt-0 col-md-5">
+                    <textarea class="form-control" placeholder="Görüşme Notu, Durum Değerlendirilmesi Belirtin"
+                        id="textarea" #textarea></textarea>
+                </div>
+                <!-- <div class="col-md-2">
+                    <h5 class="mt-3 mb-1"><b> Not: </b></h5>
+                    <p> {{this.ikgorusmesi.stepNote}}</p>
+                </div> -->
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-end">
+                            <div>
+
+                            </div>
+                            <div class="row ml-2">
+                                <button (click)="nextStep2(textarea.value)" class="btn btn-reddit btn-sm">Adayı Denemeye Al<i
+                                        class="tim-icons icon-double-right mb-1"></i></button>
+                                <button (click)="nextStep(textarea.value)" class="btn btn-primary btn-sm">Müşteri İK Görüşmesi Yeniden<i
+                                        class="tim-icons icon-double-right mb-1"></i></button>
+                                <button (click)="backStep(textarea.value)" class="btn btn-offered btn-sm">Teklif Verilenlere Tekrar At<i
+                                        class="tim-icons icon-double-right mb-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                <ng-template #nextBtn>
+                    <div class="col-md-3">
+
+                    </div>
+                </ng-template>
+            </div>
+            <div>
+                <button class="navButton btn btn-light btn-sm" (click)="kara_liste()">Kara Liste</button>
+            </div>
+        </div>
+    </li>
+</ul>

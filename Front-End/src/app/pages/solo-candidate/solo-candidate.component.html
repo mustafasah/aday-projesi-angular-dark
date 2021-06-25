@@ -1,0 +1,104 @@
+<div class=" content">
+<div class=" row">
+<div class=" col-12">
+<div class=" card card-chart">
+<div class=" card-header">
+    <div class="row g-0">
+        <div class="col-md-4 mb-3" style="max-width: 13rem">
+            <a>
+                <img src="assets/public/upload/{{candidate.profile_image}}" class="card-img-top" alt="">
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class=" td-actions text-right">
+                    <button (click)="clicled()" class=" btn btn-link" type="button" placement="left"
+                        ngbTooltip="Bilgileri Gücelle" container="body">
+                        <i class=" tim-icons icon-pencil"> </i>
+                    </button>
+                </div>
+                <div class="card-body col-md-5">
+                    <p class="card-text">İsim :<b style="color: white"> {{candidate.name}}</b></p>
+                    <p class="card-text">Güncel Adım :<b style="color: white"> {{activityName}}</b></p>
+                    <p class="card-text">Adım Sorumlusu :<b style="color: white"> {{activityAssigneer}}</b></p>
+                    <p class="card-text"><small class="text-muted">Son Güncelleme : {{candidate.updatedAt}}</small></p>
+                </div>
+                <div class="card-body col-md-4">
+                    <!-- <p class="card-text"><b style="color: #ec250d;">E-Posta Adresi :</b> {{candidate.email}}</p> -->
+                </div>
+                <div class="card-body col-md-2 ml-3">
+                    <ng-template #startButton>
+                    <button class="btn btn-info" type="button" routerLink='/startinterview/{{candidate.key}}'>
+                        <i class="tim-icons icon-triangle-right-17 mb-1"></i> Görüşme Başlat </button>
+                    </ng-template>
+                    <button *ngIf="isProcess else startButton" class="btn btn-info" type="button" routerLink='/startinterview/{{candidate.key}}'>
+                        <i class="tim-icons icon-triangle-right-17 mb-1"></i> Devam Et </button>
+                    <button *ngIf="isHistory" class="btn btn-default btn-sm" type="button" routerLink='/state/{{candidate.key}}'>
+                        <i class="tim-icons icon-refresh-02 mb-1"></i> Geçmiş </button>
+                    <!-- <button class="btn btn-fill btn-danger btn-sm" type="button"
+                        (click)="claimCandidate()"><i class="tim-icons icon-tap-02 mb-1"></i> Devral</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="this.isClicked==true" id="showEditMenu">
+        <form #frm="ngForm" (ngSubmit)="save()">
+            <div class="row">
+                <div class="col-md-5 pr-md-1">
+                    <div class="form-group">
+                        <label> İsim </label>
+                        <input class=" form-control" placeholder="Adı Soyadı" type="text" name="name"
+                            [(ngModel)]="candidate.name" />
+                    </div>
+                </div>
+                <div class="col-md-5 pr-md-1">
+                    <div class="form-group">
+                        <label> E-Posta </label>
+                        <input class="form-control" placeholder="mail@email.com" type="email"
+                            name="email" [(ngModel)]="candidate.email" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 pr-md-1">
+                    <div class="form-group">
+                        <label> Linkedin </label>
+                        <input class="form-control" placeholder="linkedin URL" type="url"
+                            name="linkedin" [(ngModel)]="candidate.linkedin" />
+                    </div>
+                </div>
+                <div class="col-md-5 pr-md-1">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Alarm Notu </label>
+                        <input class="form-control" placeholder="Alarm Notu" type="text"
+                            name="alarmNote" [(ngModel)]="candidate.alarmNote" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 pr-md-1">
+                    <div class="form-group">
+                        <label> Alarm Tarihi </label>
+                        <input class="form-control" placeholder="Alarm Tarihi" type="datetime-local"
+                            name="alarm" [(ngModel)]="candidate.alarm" />
+                    </div>
+                </div>
+                <div class="col-md-4 pr-md-1">
+                    <div class="form-group">
+                        <label> Telefon Numarası </label>
+                        <input class="form-control" placeholder="Tel no" type="tel" name="no"
+                            [(ngModel)]="candidate.no" />
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-danger" type="submit">Kaydet</button>
+                <button class="btn btn-fill btn-danger btn-sm mt-3" style="float: right;" type="button" (click)="candidateDelete()">Adayı Sil</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,74 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card card-chart">
+                <div class=" card-header">
+                    <div class=" row mb-5">
+                        <div class=" col-sm-6 text-left">
+                            <h5 class=" card-category">Toplam Aday Sayısı</h5>
+                            <h3 class=" card-title">
+                                <i class=" tim-icons icon-badge text-danger-states"> </i> {{candidatesAllNumber}}
+                            </h3>
+                            <h2 class=" card-title">Performans</h2>
+                        </div>
+                        <div class=" card-body">
+                            <div class=" chart-area"><canvas id="chartBig1"> </canvas></div>
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class=" col-lg-6 col-md-12">
+                            <div class=" card">
+                                <div class=" card-header">
+                                    <h4 class=" card-title">Günü Geçen Görüşmeler</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class=" table tablesorter" id="">
+                                        <thead class=" text-primary">
+                                            <tr>
+                                                <th>İsim</th>
+                                                <th>Planlanan Tarih</th>
+                                                <th>Not</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngFor="let candidate of candidates" >
+                                            <tr>
+                                                <a routerLink="/candidates/{{candidate.key}}"><td>{{candidate.name}}</td></a> 
+                                                <td>{{candidate.alarm | date:'dd.MM.yyyy HH:mm'}}</td>
+                                                <td><p class="card-text" style="color: rgb(233, 32, 16);">{{candidate.alarmNote}}</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-lg-6 col-md-12">
+                            <div class=" card">
+                                <div class=" card-header">
+                                    <h4 class=" card-title">Tüm Adaylar Listesi</h4>
+                                </div>
+                                <div class=" card-body">
+                                    <table class=" table tablesorter" id="">
+                                        <thead class=" text-primary">
+                                            <tr>
+                                                <th>İsim</th>
+                                                <th>E-Posta</th>
+                                                <th>No</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngFor="let candidate of candidatesAll">
+                                            <tr>
+                                                <td>{{candidate.name}}</td>
+                                                <td>{{candidate.email}}</td>
+                                                <td>{{candidate.no}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

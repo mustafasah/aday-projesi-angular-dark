@@ -1,0 +1,98 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card card-chart">
+                <div class=" card-header">
+                    <div>
+                        <div class=" card-header">
+                            <h4 class=" card-title">Soru Ekle</h4>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Başlık</label>
+                            <input type="text" class="form-control" #title placeholder="Başlık Gir">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4 pr-md-1">
+                                <label for="exampleFormControlTextarea1" class="form-label">Hangi Sürece Ait Seç : </label>
+                                <select class="form-control" #select style="background-color: #525f7f; color: white;"
+                                    aria-label="Default select example">
+                                    <option style="color: white;" value="İK Görüşme Sorusu">İK Görüşme Sorusu</option>
+                                    <option style="color: white;" value="Teknik Görüşme Sorusu">Teknik Görüşme Sorusu
+                                    </option>
+                                    <option style="color: white;" value="Teklif Görüşme Sorusu">Teklif Görüşme Sorusu
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 pr-md-1">
+                                <label for="exampleFormControlTextarea1" class="form-label">Konu Seç : </label>
+                                <select class="form-control" name="questionType" #questionType
+                                    style="background-color: #525f7f; color: white;"
+                                    aria-label="Default select example">
+                                    <option style="color: white;" value="Java">Java</option>
+                                    <option style="color: white;" value="NET">.NET</option>
+                                    <option style="color: white;" value="Angular">Angular</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 pr-md-1">
+                                <label for="exampleFormControlTextarea1" class="form-label">Soru Seviyesi Seç : </label>
+                                <select class="form-control" name="selectLevel" #selectLevel
+                                    style="background-color: #525f7f; color: white;"
+                                    aria-label="Default select example">
+                                    <option style="color: white;" value="1">1</option>
+                                    <option style="color: white;" value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">İçerik</label>
+                            <textarea class="form-control" #description rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button (click)="addQuestionButton(title.value, select.value, description.value, selectLevel.value, questionType.value)"
+                                class="btn btn-fill btn-danger">Ekle</button>
+                        </div>
+                    </div>
+                    <div class="row" id="modals">
+                        <div class="col-md-4">
+                        </div>
+                        <i class="tim-icons icon-zoom-split mt-3"> </i>
+                        <div class="col-md-4">
+                            <input class="form-control" id="inlineFormInputGroup" placeholder="Ara" type="text"
+                                [(ngModel)]="searchText" />
+                        </div>
+                    </div>
+                    <div class=" col-lg-12 col-md-12">
+                        <div class=" card">
+                            <div class=" card-header">
+                                <h4 class=" card-title">Tüm Sorular Listesi</h4>
+                            </div>
+                            <div class=" card-body">
+                                <table class=" table tablesorter" id="">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>Başlık</th>
+                                            <th>İçerik</th>
+                                            <th>Süreç</th>
+                                            <th>Konu</th>
+                                            <th>Seviye</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="cursor: pointer;"
+                                        *ngFor="let question of questions | filter:searchText">
+                                        <tr [routerLink]="['/questions', question.key]">
+                                            <td>{{question.title}}</td>
+                                            <td>{{question.description}}</td>
+                                            <td>{{question.belongName}}</td>
+                                            <td>{{question.typeName}}</td>
+                                            <td>{{question.level}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

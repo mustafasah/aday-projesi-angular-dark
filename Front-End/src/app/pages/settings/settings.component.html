@@ -1,0 +1,61 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-8">
+            <div class=" card">
+                <div class=" card-header">
+                    <form class="row" (ngSubmit)="onSubmit()">
+                        <div class="col-auto mt-2 ">
+                            <h4 class=" card-title">Yeni Şifre Oluştur</h4>
+                        </div>
+                        <div class="col-auto mt-1 mb-3">
+                          <input type="password" name="company" class="form-control" id="inputPassword2" [(ngModel)]="newPass" placeholder="Yeni Şifre Gir">
+                        </div>
+                        <div class="col-auto mb-3">
+                          <button type="submit" class="btn btn-primary">Değiştir</button>
+                        </div>
+                      </form>
+                    <div class=" fixed-plugin">
+                        <div class=" show-dropdown" ngbDropdown>
+                            <a data-toggle="dropdown" ngbDropdownToggle>
+                                <i class=" fa fa-cog fa-2x"> </i>
+                            </a>
+                            <ul ngbDropdownMenu>
+                                <li class=" header-title">Sol Menü Arkaplan</li>
+                                <li class=" adjustments-line">
+                                    <a class=" switch-trigger background-color" href="javascript:void(0)">
+                                        <div class=" badge-colors text-center">
+                                            <span class=" badge filter badge-danger"
+                                                [ngClass]="{'active':sidebarColor==='red'}"
+                                                (click)="changeSidebarColor('red')">
+                                            </span>
+                                            <span class=" badge filter badge-primary"
+                                                [ngClass]="{'active':sidebarColor==='primary'}"
+                                                (click)="changeSidebarColor('primary')">
+                                            </span>
+                                            <span class=" badge filter badge-info"
+                                                [ngClass]="{'active':sidebarColor==='blue'}"
+                                                (click)="changeSidebarColor('blue')"> </span>
+                                            <span class=" badge filter badge-success"
+                                                [ngClass]="{'active':sidebarColor==='green'}"
+                                                (click)="changeSidebarColor('green')">
+                                            </span>
+                                        </div>
+                                        <div class=" clearfix"></div>
+                                    </a>
+                                </li>
+                                <li class=" adjustments-line text-center color-change">
+                                    <span class=" color-label"> BEYAZ </span>
+                                    <span class=" badge light-badge mr-2"
+                                        (click)="changecomingCandidatesColor('white-content')"> </span>
+                                    <span class=" badge dark-badge ml-2"
+                                        (click)="changecomingCandidatesColor('black-content')"> </span>
+                                    <span class=" color-label"> SİYAH </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

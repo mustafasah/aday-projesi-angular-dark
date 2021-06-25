@@ -1,0 +1,119 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-8">
+      <div class=" card">
+        <div class=" card-header">
+          <h5 class=" title">Profil Güncelle</h5>
+        </div>
+        <div class=" card-body">
+          <form #frm="ngForm" (ngSubmit)="save()">
+            <div class=" row">
+              <div class=" col-md-5 pr-md-1">
+                <div class=" form-group">
+                  <label> Şirket </label>
+                  <input class=" form-control" placeholder="Şirket" type="text" name="company" [(ngModel)]="user.company" />
+                </div>
+              </div>
+              <div class=" col-md-5 pr-md-1">
+                <div class=" form-group">
+                  <label> Pozisyon </label>
+                  <input class=" form-control" placeholder="Şirket" type="text" name="position" [(ngModel)]="user.position" />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-5 pr-md-1">
+                <div class=" form-group">
+                  <label> İsim </label>
+                  <input class=" form-control" placeholder="Adı" type="text" name="name" [(ngModel)]="user.name" />
+                </div>
+              </div>
+              <div class=" col-md-5 pl-md-1">
+                <div class=" form-group">
+                  <label for="exampleInputEmail1"> E-Posta adresi </label>
+                  <input class=" form-control" placeholder="mail@email.com" type="email" name="email" [(ngModel)]="user.email" />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-12">
+                <div class=" form-group">
+                  <label> Adres </label>
+                  <input class=" form-control" placeholder="Ev-İş Adres" type="text" name="address" [(ngModel)]="user.address" />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-4 pr-md-1">
+                <div class=" form-group">
+                  <label> Şehir </label>
+                  <input class=" form-control" placeholder="Şehir" type="text" name="city" [(ngModel)]="user.city" />
+                </div>
+              </div>
+              <div class=" col-md-4 px-md-1">
+                <div class=" form-group">
+                  <label> Ülke </label>
+                  <input class=" form-control" placeholder="Ülke" type="text" name="country" [(ngModel)]="user.country" />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class=" form-group">
+                  <label> Posta Kodu </label>
+                  <input class=" form-control" placeholder="Posta Kodu" type="number" name="postacode" [(ngModel)]="user.postacode" />
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-8">
+                <div class=" form-group">
+                  <label> Hakkımda/Açıklama/Önsöz </label>
+                  <textarea class=" form-control" cols="80" placeholder="Buraya açıklama yapabilirsiniz." rows="4" name="about" [(ngModel)]="user.about">
+                  </textarea>
+                </div>
+              </div>
+            </div>
+            <div class=" card-footer">
+              <button class=" btn btn-fill btn-danger" type="submit">Kaydet</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <div class=" card card-user">
+        <div class=" card-body">
+          <p class=" card-text"></p>
+          <div class=" author">
+            <div class=" block block-one"></div>
+            <div class=" block block-two"></div>
+            <div class=" block block-three"></div>
+            <div class=" block block-four"></div>
+            <a href="javascript:void(0)">
+              <img alt="..." class=" avatar" src="assets/public/upload/default.jpg" />
+
+              <h5 class=" title">{{user.name}}</h5>
+            </a>
+            <p class=" description">{{user.company}}</p>
+            <p class=" description">{{user.position}}</p>
+          </div>
+          <div class=" card-description">
+            {{user.about}}
+          </div>
+        </div>
+        <div class=" card-footer">
+          <div class=" button-container">
+            <button class=" btn btn-icon btn-round btn-facebook" href="javascript:void(0)">
+              <i class=" fab fa-facebook"> </i>
+            </button>
+            <button class=" btn btn-icon btn-round btn-twitter" href="javascript:void(0)">
+              <i class=" fab fa-twitter"> </i>
+            </button>
+            <button class=" btn btn-icon btn-round btn-google" href="javascript:void(0)">
+              <i class=" fab fa-google-plus"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
